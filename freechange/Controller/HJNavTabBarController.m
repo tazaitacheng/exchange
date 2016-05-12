@@ -8,7 +8,7 @@
 
 #import "HJNavTabBarController.h"
 #import "HJNavTabBar.h"
-#import "ZLCommonConst.h"
+#import "HJCommonConst.h"
 #import "HJChannelViewModel.h"
 #import <objc/message.h>
 

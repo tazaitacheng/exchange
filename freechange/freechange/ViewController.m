@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 #import "HJNavTabBarController.h"
-#import "ZLCommonConst.h"
+#import "HJCommonConst.h"
 
 @interface ViewController ()
 

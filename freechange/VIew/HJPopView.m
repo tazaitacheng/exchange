@@ -8,7 +8,7 @@
 
 #import "HJPopView.h"
 #import "UIImage+HJImageEffcets.h"
-#import "ZLCommonConst.h"
+#import "HJCommonConst.h"
 #import "HJChannelView.h"
 
 #define CHANNEL_TITLE_LABEL_FONT [UIFont boldSystemFontOfSize:20.f]

@@ -7,7 +7,7 @@
 //
 
 #import "HJNavTabBar.h"
-#import "ZLCommonConst.h"
+#import "HJCommonConst.h"
 #import "HJPopView.h"
 #import "UIView+HJFrame.h"
 

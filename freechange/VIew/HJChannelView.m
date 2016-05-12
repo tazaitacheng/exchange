@@ -7,7 +7,7 @@
 //
 
 #import "HJChannelView.h"
-#import "ZLCommonConst.h"
+#import "HJCommonConst.h"
 #import "HJChannelViewModel.h"
 #import "NSArray+HJLog.h"
 
