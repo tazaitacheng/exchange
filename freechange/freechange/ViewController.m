@@ -20,6 +20,7 @@
 {
     [super viewDidLoad];
     
+    
     UIViewController* one = [[UIViewController alloc]init];
     one.title = @"测试界面1";
     one.view.backgroundColor = [UIColor redColor];

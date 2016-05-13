@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "ZyyPageViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -15,8 +15,16 @@
 @implementation AppDelegate
 
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+    
+    //把ZyyPageViewController作为根界面显示。。
+    UIWindow* window=[[UIWindow alloc]initWithFrame:[[UIScreen mainScreen]bounds]];
+    self.window=window;
+    self.window.backgroundColor=[UIColor whiteColor];
+    ZyyPageViewController* pageViewController=[[ZyyPageViewController alloc]init];
+    self.window.rootViewController=pageViewController;
+    [self.window makeKeyAndVisible];    
     return YES;
 }
 
