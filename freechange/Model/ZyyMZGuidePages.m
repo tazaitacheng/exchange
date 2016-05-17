@@ -7,6 +7,7 @@
 //
 
 #import "ZyyMZGuidePages.h"
+#import "ZyyTabBarViewController.h"
 #define SCREEN_WIDTH [[UIScreen mainScreen] bounds].size.width
 #define SCREEN_HEIGHT [[UIScreen mainScreen] bounds].size.height
 @interface ZyyMZGuidePages () <UIScrollViewDelegate>
@@ -123,7 +124,8 @@ if (self)
     if (_buttonAction)
     {
         _buttonAction();
-    }
+ 
+    }    
 }
 
 #pragma mark

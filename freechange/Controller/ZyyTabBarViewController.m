@@ -11,6 +11,7 @@
 #import "ZyyChangeViewController.h"
 #import "ZyyCommunityViewController.h"
 #import "ZyyMineViewController.h"
+
 @interface ZyyTabBarViewController ()
 
 @end
@@ -20,6 +21,10 @@
 {
     [super viewDidLoad];
     [self initRootVC];
+   
+    
+    
+    
     // Do any additional setup after loading the view.
 }
 -(void)initRootVC
@@ -101,7 +106,15 @@
     
     
 }
-
+//-(void)viewWillAppear:(BOOL)animated
+//{
+//    [super viewWillAppear:animated];
+//    if (self.presentingViewController)
+//    {
+//        UIBarButtonItem* dismissButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelButtonPressed)];
+//        self.navigationItem.rightBarButtonItem = dismissButton;
+//    }
+//}
 
 
 - (void)didReceiveMemoryWarning {
