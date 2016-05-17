@@ -10,7 +10,7 @@
 #import "ZYPinYinSearch.h"
 #import "ChineseString.h"
 
-#define kColor          [UIColor colorWithRed:230.0/255.0 green:230.0/255.0 blue:230.0/255.0 alpha:1];
+#define kColor  [UIColor colorWithRed:230.0/255.0 green:230.0/255.0 blue:230.0/255.0 alpha:1];
 
 @interface SearchTableViewController ()<UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate,UISearchResultsUpdating>
 
@@ -39,6 +39,16 @@
     
     self.navigationItem.title = @"搜索框";
     [self.tableView setTableHeaderView:self.searchController.searchBar];
+//    UIButton *backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+//    backBtn.frame = CGRectMake(10, 30, 23, 23);
+//    [backBtn setImage:[UIImage imageNamed:@"btn_backItem"] forState:UIControlStateNormal];
+//    [backBtn addTarget:self action:@selector(OnBackBtn:) forControlEvents:UIControlEventTouchUpInside];
+    
+//        UIBarButtonItem* leftItem = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:self action:@selector(goSearch)];
+//    
+//            self.navigationItem.leftBarButtonItem = leftItem;
+//    
+    
 }
 
 - (void)didReceiveMemoryWarning

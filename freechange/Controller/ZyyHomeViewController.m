@@ -8,6 +8,8 @@
 
 #import "ZyyHomeViewController.h"
 #import "SearchTableViewController.h"
+#import "Public.h"
+#import "ZyyMapViewControlle.h"
 @interface ZyyHomeViewController ()
 
 @end
@@ -16,17 +18,64 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor whiteColor];
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
+    self.navigationController.interactivePopGestureRecognizer.delegate = nil;
      [self setNav];
     // Do any additional setup after loading the view from its nib.
 }
-//添加搜索按钮
 -(void)setNav
 {
-    UIBarButtonItem* rightItem = [[UIBarButtonItem alloc] initWithTitle:@"搜索" style:UIBarButtonItemStylePlain target:self action:@selector(goSearch)];
+   // 背景View
+    UIView *backView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, screen_width, 64)];
+    backView.backgroundColor = navigationBarColor;
+    [self.view addSubview:backView];
     
-    self.navigationItem.rightBarButtonItem = rightItem;
+    //城市
+    UIButton* cityBtn=[UIButton buttonWithType:UIButtonTypeCustom];
+    cityBtn.frame=CGRectMake(10, 30, 40, 25);
+    cityBtn.titleLabel.font=[UIFont systemFontOfSize:15];
+    [cityBtn setTitle:@"城市" forState:UIControlStateNormal];
+    [backView addSubview:cityBtn];
+    UIImageView *arrowImage = [[UIImageView alloc] initWithFrame:CGRectMake(CGRectGetMaxX(cityBtn.frame), 38, 13, 10)];
+    [arrowImage setImage:[UIImage imageNamed:@"icon_homepage_downArrow"]];
+    [backView addSubview:arrowImage];
+    
+    //地图
+    UIButton *mapBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    mapBtn.frame = CGRectMake(screen_width-42, 25, 42, 30);
+    [mapBtn setImage:[UIImage imageNamed:@"icon_homepage_map_old"] forState:UIControlStateNormal];
+    [mapBtn addTarget:self action:@selector(OnMapBtnTap:) forControlEvents:UIControlEventTouchUpInside];
+    [backView addSubview:mapBtn];
+    
+    //添加搜索按钮
+//    UIBarButtonItem* rightItem = [[UIBarButtonItem alloc] initWithTitle:@"搜索" style:UIBarButtonItemStylePlain target:self action:@selector(goSearch)];
+//    
+//        self.navigationItem.rightBarButtonItem = rightItem;
+    //[backView addSubview:rightItem];
+    UIButton* searchBtn=[UIButton buttonWithType:UIButtonTypeCustom];
+    searchBtn.frame=CGRectMake(screen_width/2-20, 25, 40, 30);
+    [searchBtn setTitle:@"搜索" forState:UIControlStateNormal];
+    [searchBtn addTarget:self action:@selector(goSearch) forControlEvents:UIControlEventTouchUpInside];
+    [backView addSubview:searchBtn];
+    
     
 }
+-(void)OnMapBtnTap:(UIButton *)sender
+{
+    ZyyMapViewControlle* mapViewController=[[ZyyMapViewControlle alloc]init];
+    
+    [self.navigationController pushViewController:mapViewController animated:YES];
+}
+
+////添加搜索按钮
+//-(void)setNav
+//{
+//    UIBarButtonItem* rightItem = [[UIBarButtonItem alloc] initWithTitle:@"搜索" style:UIBarButtonItemStylePlain target:self action:@selector(goSearch)];
+//    
+//    self.navigationItem.rightBarButtonItem = rightItem;
+//    
+//}
 - (void)goSearch
 {
     SearchTableViewController* searchVc = [SearchTableViewController new];
