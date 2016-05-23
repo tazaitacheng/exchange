@@ -8,6 +8,15 @@
 
 #import "AppDelegate.h"
 #import "ZyyPageViewController.h"
+
+//短信验证
+#import <SMS_SDK/SMSSDK.h>
+#define app_key @"10fa94a4de550"
+#define app_secrect @"591ae7bceefb1263ca4fed28577977d8"
+
+#import "LoginViewController.h"
+#import "HYPZhuceViewController.h"
+
 @interface AppDelegate ()
 
 @end
@@ -17,6 +26,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
+    //短信验证
+    [SMSSDK registerApp:app_key withSecret:app_secrect];
     
     //把ZyyPageViewController作为根界面显示。。
     UIWindow* window=[[UIWindow alloc]initWithFrame:[[UIScreen mainScreen]bounds]];

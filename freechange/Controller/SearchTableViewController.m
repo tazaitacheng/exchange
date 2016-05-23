@@ -76,7 +76,7 @@
         _searchController.dimsBackgroundDuringPresentation = NO;
         _searchController.hidesNavigationBarDuringPresentation = YES;
         _searchController.searchBar.placeholder = @"搜索";
-        [_searchController.searchBar sizeToFit];
+        //[_searchController.searchBar sizeToFit];
     }
     return _searchController;
 }
